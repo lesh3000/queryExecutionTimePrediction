@@ -1,6 +1,6 @@
-tensorflow
+tensorflow-gpu==2.4.1
 flask
-numpy
+numpy==1.19.5
 
 
 
