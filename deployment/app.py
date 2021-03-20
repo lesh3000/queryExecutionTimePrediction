@@ -3,9 +3,9 @@ import re
 import tensorflow
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras import backend as K
 import pickle
 import numpy as np
-
 
 
 
@@ -16,10 +16,10 @@ def metr(y_true, y_pred):
   return K.mean(K.square(K.exp(y_pred)- K.exp(y_true)))
 
 
-with open('/model/tokenizer.pkl','rb') as tks:
+with open('model/tokenizer.pkl','rb') as tks:
     tokenizer = pickle.load(tks)
 
-model= tensorflow.keras.models.load_model('/model/modelRnn.h5',
+model= tensorflow.keras.models.load_model('model/modelRnn.h5',
                                          custom_objects={'metr': metr}, compile=True)
 
 
