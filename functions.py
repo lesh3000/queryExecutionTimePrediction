@@ -8,6 +8,7 @@ import datetime
 import tensorflow as tf
 
 
+
 def autolabel(rects,ax):
     """Attach a text label above each bar in *rects*, displaying its height."""
     for rect in rects:
