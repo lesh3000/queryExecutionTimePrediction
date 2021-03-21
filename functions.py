@@ -35,6 +35,7 @@ def loadLog(filePath):
         obj
         
         Pandas DataFrame object
+        
         """
 
     dirname = os.path.abspath('')
