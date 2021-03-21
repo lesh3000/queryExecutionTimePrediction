@@ -12,14 +12,14 @@ https://colab.research.google.com/drive/1rIeIPLkFO4aSdHuaxu-NALf9ptP6WLsF?usp=sh
 
 # Model Deployment #
 
-Deployed on AZURE app services as FLASK app:
-https://sqlproblemapp.azurewebsites.net/
+Deployed on AZURE app services as FLASK app:<br>
+https://sqlproblemapp.azurewebsites.net/<br><br>
 
 Deployement specs explained: deploymentSpecs.pdf
 
-Source code is available in deployment/
-model/ contains deployed Tensorflow model and tokenizer
-app.py is FLASK app scoring script
+Source code is available in deployment/ <br>
+model/ contains deployed Tensorflow model and tokenizer<br>
+app.py is FLASK app scoring script<br><br>
 
 Prediction URI: https://sqlproblemapp.azurewebsites.net/predict
 Required parameters: data|str
