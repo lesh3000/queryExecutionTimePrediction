@@ -8,7 +8,7 @@ dataAnalysis.ipynb requires access to data/ and functions.py
 # Model Training #
 
 modelTraining.ipynb ran on google colab: <br>
-https://colab.research.google.com/drive/1rIeIPLkFO4aSdHuaxu-NALf9ptP6WLsF?usp=sharing
+https://colab.research.google.com/drive/1tCdCI6rzDgySILAf5GtQCX67n55AZ8eX?usp=sharing
 
 # Model Deployment #
 
