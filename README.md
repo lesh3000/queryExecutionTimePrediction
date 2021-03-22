@@ -23,13 +23,14 @@ app.py is FLASK app scoring script<br><br><br>
 
 Prediction URI: https://sqlproblemapp.azurewebsites.net/predict<br>
 Required parameters: data|str<br><br>
+Return: dict {'query_time': str, 'text': str }
 
 Example:<br><br>
 
 import requests<br>
 url = 'https://sqlproblemapp.azurewebsites.net/predict'<br>
 r = requests.post(url,json={'data':'quit'})<br>
-print(r.json())<br>
+print(r.json())
 
 
 
