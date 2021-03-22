@@ -57,20 +57,26 @@ def extendedClean(s):
 def predict():
 
     data = request.get_json(force=True)
-    text=clean(data['data'])
-    print(text)
-    text= extendedClean(text)
-    tokenized=text.replace(",", " , ").replace("("," ( ").replace(")"," ) ").replace("="," = ")
-    X = tokenizer.texts_to_sequences([tokenized])
-    X = pad_sequences(X,model.layers[0].input_shape[0][1])
+    text=data['data'].strip()
     
-    z=model.predict(X)
-    print(z[0][0])
+    if text != "":
+        text=clean(text)
+        print(text)
+        text= extendedClean(text)
+        tokenized=text.replace(",", " , ").replace("("," ( ").replace(")"," ) ").replace("="," = ")
+        X = tokenizer.texts_to_sequences([tokenized])
+        X = pad_sequences(X,model.layers[0].input_shape[0][1])
+    
+        z=model.predict(X)
+    
 
-    output = str(np.exp(z[0][0]))
-    
-    
+        output = str(np.exp(z[0][0]))
+    else:
+        output="Please provide a SQL command"
+        
     return jsonify(output)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
