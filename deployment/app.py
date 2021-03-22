@@ -60,18 +60,18 @@ def predict():
     text=data['data'].strip()
     
     if text != "":
-        text=clean(text)
-        print(text)
-        text= extendedClean(text)
-        tokenized=text.replace(",", " , ").replace("("," ( ").replace(")"," ) ").replace("="," = ")
-        X = tokenizer.texts_to_sequences([tokenized])
+        pr=clean(text)
+        
+        pr= extendedClean(pr)
+        pr=pr.replace(",", " , ").replace("("," ( ").replace(")"," ) ").replace("="," = ")
+        X = tokenizer.texts_to_sequences([pr])
         X = pad_sequences(X,model.layers[0].input_shape[0][1])
     
         z=model.predict(X)
         z= str(np.exp(z[0][0]))
         output= {"text":text, "query_time": z}
     else:
-        output="Please provide a SQL command"
+        output= {"text":text, "query_time": "Please provide a SQL command"}
         
     return jsonify(output)
 
