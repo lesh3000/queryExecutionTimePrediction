@@ -68,9 +68,8 @@ def predict():
         X = pad_sequences(X,model.layers[0].input_shape[0][1])
     
         z=model.predict(X)
-    
-
-        output = str(np.exp(z[0][0]))
+        z= str(np.exp(z[0][0]))
+        output= {"text":text, "query_time": z}
     else:
         output="Please provide a SQL command"
         
